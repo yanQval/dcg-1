@@ -236,6 +236,24 @@ class DeepCoordinationGraphMAC(BasicMAC):
                 edges = [(i, i + 1) for i in range(self.n_agents - 1)] + [(self.n_agents - 1, 0)]
             elif arg == 'star':     # arrange all agents in a star around agent 0
                 edges = [(0, i + 1) for i in range(self.n_agents - 1)]
+            elif arg == 'aloha':
+                edges = [(i, i + 1) for i in range(self.n_agents - 1)]
+                for i in range(self.n_agnets // 2):
+                    edges.append((i, i + self.n_agents // 2))
+            elif arg == 'sensor':
+                height = 3
+                width = 5
+                edges = []
+                for i in range(height):
+                    for j in range(width):
+                        if j < width - 1:
+                            edges.append((i * width + j, i * width + j + 1))
+                        if i < height - 1:
+                            edges.append((i * width + j, (i + 1) * width + j))
+                        if i > 0 and j < width - 1:
+                            edges.append((i * width + j, (i - 1) * width + j + 1))
+                        if i < height - 1 and j < width - 1:
+                            edges.append((i * width + j, (i + 1) * width + j + 1))
             elif arg == 'full':     # fully connected CG
                 edges = [[(j, i + j + 1) for i in range(self.n_agents - j - 1)] for j in range(self.n_agents - 1)]
                 edges = [e for l in edges for e in l]

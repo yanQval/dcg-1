@@ -1,9 +1,9 @@
 env: pursuit
 
 env_args:
-  n_agents: 10
-  n_preys: 5
-  episode_limit: 50
+  n_agents: 20
+  n_preys: 10
+  episode_limit: 30
   map_size: 10
   catch_reward: 1
   catch_fail_reward: -1
@@ -14,7 +14,7 @@ env_args:
 learner_log_interval: 10000
 log_interval: 10000
 runner_log_interval: 10000
-t_max: 2005000
+t_max: 4005000
 test_interval: 10000
 test_nepisode: 300
 test_greedy: True
