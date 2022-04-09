@@ -238,7 +238,7 @@ class DeepCoordinationGraphMAC(BasicMAC):
                 edges = [(0, i + 1) for i in range(self.n_agents - 1)]
             elif arg == 'aloha':
                 edges = [(i, i + 1) for i in range(self.n_agents - 1)]
-                for i in range(self.n_agnets // 2):
+                for i in range(self.n_agents // 2):
                     edges.append((i, i + self.n_agents // 2))
             elif arg == 'sensor':
                 height = 3
