@@ -6,6 +6,9 @@ REGISTRY["basic_mac"] = BasicMAC
 from .dcg_controller import DeepCoordinationGraphMAC
 REGISTRY["dcg_mac"] = DeepCoordinationGraphMAC
 
+from .dcgbf_controller import DeepCoordinationGraphBFMAC
+REGISTRY["dcg_mac"] = DeepCoordinationGraphBFMAC
+
 from .dcg_noshare_controller import DCGnoshareMAC
 REGISTRY["dcg_noshare_mac"] = DCGnoshareMAC
 
